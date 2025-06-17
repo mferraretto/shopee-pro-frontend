@@ -1,103 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shopee Pro</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f4f6f8;
-      color: #333;
-    }
-    header {
-      background-color: #2b6cb0;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    header p {
-      margin: 10px 0 20px;
-      font-size: 1.1em;
-    }
-    .btn {
-      background-color: white;
-      border: 2px solid white;
-      color: #2b6cb0;
-      padding: 10px 20px;
-      margin: 5px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: 0.3s;
-      text-decoration: none;
-    }
-    .btn:hover {
-      background-color: #2b6cb0;
-      color: white;
-      border: 2px solid white;
-    }
-    main {
-      padding: 30px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-    footer {
-      background-color: #1a202c;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-    }
-    .btn-suporte {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #38a169;
-      color: white;
-      border: none;
-      padding: 12px 18px;
-      border-radius: 30px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shopee Pro - Login</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
-    <h1>Shopee Pro</h1>
-    <p>Seu sistema completo para análise e crescimento na Shopee</p>
-    <a href="planos.html" class="btn">Ver Planos</a>
-    <a href="painel.html" class="btn">Entrar no Sistema</a>
-  </header>
-
-  <main>
-    <h2>O que é o Shopee Pro?</h2>
-    <p>
-      Uma plataforma inteligente para vendedores que desejam analisar, escalar e lucrar com seus anúncios na Shopee.
-      Com recursos de IA, scraping e painel de gestão.
-    </p>
-
-    <h3>Funcionalidades</h3>
-    <ul>
-      <li>🔍 Análise de anúncios em tempo real</li>
-      <li>📈 Dashboard com insights por produto e loja</li>
-      <li>📊 Gestão de contas e metas</li>
-      <li>🔒 Segurança com login individual</li>
-    </ul>
-  </main>
-
-  <footer>
-    <p><a href="#">Termos de Uso</a> • <a href="#">Política de Privacidade</a></p>
-    <p>Shopee Pro © 2025</p>
-  </footer>
-
-  <button class="btn-suporte">💬 Suporte</button>
+  <div class="login-container">
+    <h1>Bem-vindo ao Shopee Pro</h1>
+    <input type="email" id="email" placeholder="Seu e-mail" />
+    <input type="password" id="senha" placeholder="Sua senha" />
+    <button onclick="login()">Entrar</button>
+  </div>
+  <script type="module" src="js/firebase-init.js"></script>
 </body>
 </html>
