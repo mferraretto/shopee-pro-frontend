@@ -1,32 +1,22 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
 import {
   getAuth,
-  signInWithEmailAndPassword,
-  onAuthStateChanged
+  signInWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDpeLLtMasPdbWcffrDZQ0a_G-CtBhkbVk",
-  authDomain: "shopee-pro-v2.firebaseapp.com",
-  projectId: "shopee-pro-v2",
-  storageBucket: "shopee-pro-v2.appspot.com",
-  messagingSenderId: "627773073455",
-  appId: "1:627773073455:web:ba85fbd1f3a2661f267eda"
-};
+import { firebaseConfig } from "./firebase-init.js";
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-document.getElementById("loginForm").addEventListener("submit", (e) => {
-  e.preventDefault();
+document.getElementById("entrarBtn").addEventListener("click", () => {
   const email = document.getElementById("email").value;
-  const senha = document.getElementById("password").value;
+  const senha = document.getElementById("senha").value;
 
   signInWithEmailAndPassword(auth, email, senha)
     .then(() => {
       window.location.href = "painel.html";
     })
-    .catch((error) => {
-      alert("Erro ao fazer login: " + error.message);
+    .catch(error => {
+      alert("Erro no login: " + error.message);
     });
 });
