@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Login</title>
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="login.js"></script>
+  <meta charset="UTF-8" />
+  <title>Login - Shopee Pro</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="menu">
+    <a href="index.html">Início</a>
+    <a href="planos.html">Planos</a>
+  </div>
   <h1>Login</h1>
-  <input type="email" id="email" placeholder="E-mail">
-  <input type="password" id="senha" placeholder="Senha">
-  <button id="entrarBtn">Entrar</button>
+  <input type="email" id="email" placeholder="E-mail" />
+  <input type="password" id="senha" placeholder="Senha" />
+  <button onclick="login()">Entrar</button>
+  <script src="firebase-init.js"></script>
+  <script src="login.js"></script>
 </body>
 </html>
