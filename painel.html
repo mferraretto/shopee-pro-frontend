@@ -1,27 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Painel Shopee Pro</title>
-  <link rel="stylesheet" href="css/style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel do Usuário</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="sidebar">
-    <h2>Shopee Pro</h2>
-    <button onclick="mostrarAba('analise')">Análise</button>
-    <button onclick="mostrarAba('historico')">Histórico</button>
-    <button onclick="mostrarAba('plano')">Plano</button>
-    <button onclick="mostrarAba('dashboard')">Dashboard</button>
-    <button onclick="logout()">Sair</button>
-  </div>
-  <div class="content">
-    <div id="analise" class="aba ativa"><h1>Análise de Anúncio</h1><textarea id="descricao" placeholder="Cole a descrição do anúncio..."></textarea><button onclick="analisar()">Analisar</button><div id="resposta"></div></div>
-    <div id="historico" class="aba"><h1>Histórico</h1><ul id="listaHistorico"></ul></div>
-    <div id="plano" class="aba"><h1>Plano</h1><p>Seu plano atual: <span id="planoAtual">Gratuito</span></p></div>
-    <div id="dashboard" class="aba"><h1>Dashboard</h1><canvas id="graficoUso"></canvas></div>
-  </div>
-  <script type="module" src="js/firebase-init.js"></script>
-  <script type="module" src="js/analise.js"></script>
+  <h1>Painel do Usuário</h1>
+  <p><strong>Plano:</strong> Gratuito</p>
+  <p><strong>Limite de análises hoje:</strong> 3</p>
+  <p><strong>Próxima renovação:</strong> -</p>
+  <a href="planos.html">Fazer Upgrade</a>
+  <footer><a href="index.html">Voltar ao Início</a></footer>
 </body>
 </html>

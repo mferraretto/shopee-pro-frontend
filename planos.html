@@ -1,75 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Planos - Shopee Pro</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planos</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Planos do Shopee Pro</h1>
-    <p>Escolha o plano ideal para o seu negócio</p>
-  </header>
-  <main>
-    <section class="planos">
-      <div class="plano">
-        <h2>Gratuito</h2>
-        <p class="preco">R$ 0,00</p>
-        <ul>
-          <li>✅ Análises limitadas</li>
-          <li>✅ Dashboard básico</li>
-        </ul>
-        <p><strong>Já incluso ao se cadastrar</strong></p>
-      </div>
-      <div class="plano">
-        <h2>Profissional</h2>
-        <p class="preco">R$ 29,90 / mês</p>
-        <ul>
-          <li>✅ Análises ilimitadas</li>
-          <li>✅ Painel completo</li>
-          <li>✅ Suporte prioritário</li>
-        </ul>
-        <img src="pix-pro.png" alt="QR Code Pix Pro" class="pix" />
-        <p class="chave">Chave Pix: <strong>contato@shopeepro.com</strong></p>
-      </div>
-      <div class="plano">
-        <h2>Empresarial</h2>
-        <p class="preco">R$ 59,90 / mês</p>
-        <ul>
-          <li>✅ Múltiplos usuários</li>
-          <li>✅ Recursos exclusivos</li>
-        </ul>
-        <img src="pix-empresarial.png" alt="QR Code Pix Empresarial" class="pix" />
-        <p class="chave">Chave Pix: <strong>contato@shopeepro.com</strong></p>
-      </div>
-    </section>
-    <p class="info">Após o pagamento, envie o comprovante para o suporte via WhatsApp. Liberação manual em até 1h.</p>
-  </main>
-  <footer>
-    <p><a href="index.html">Página Inicial</a> • <a href="termos.html">Termos</a> • <a href="politica.html">Privacidade</a></p>
-  </footer>
-
-<script>
-  const botao = document.createElement("a");
-  botao.href = "https://wa.me/5599999999999?text=Olá! Preciso de ajuda com meu acesso ao Shopee Pro.";
-  botao.target = "_blank";
-  botao.style = `
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    font-weight: bold;
-    padding: 12px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    z-index: 999;
-  `;
-  botao.innerText = "💬 Suporte";
-  document.body.appendChild(botao);
-</script>
-
+  <h1>Planos do Shopee Pro</h1>
+  <div class="planos">
+    <div class="plano"><h2>Gratuito</h2><p>R$0,00</p></div>
+    <div class="plano"><h2>Profissional</h2><p>R$29,90</p></div>
+    <div class="plano"><h2>Empresarial</h2><p>R$59,90</p></div>
+  </div>
 </body>
 </html>
