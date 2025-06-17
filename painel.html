@@ -1,18 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Painel do Usuário</title>
-  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="./firebase-init.js"></script>
+  <script type="module" src="./painel.js"></script>
 </head>
 <body>
+  <nav>
+    <a href="painel.html">🏠 Painel</a> |
+    <a href="auditoria.html">📊 Auditoria</a> |
+    <a href="planos.html">💳 Planos</a>
+  </nav>
   <h1>Painel do Usuário</h1>
-  <p><strong>Plano:</strong> Gratuito</p>
-  <p><strong>Limite de análises hoje:</strong> 3</p>
-  <p><strong>Próxima renovação:</strong> -</p>
-  <a href="planos.html">Fazer Upgrade</a>
-  <footer><a href="index.html">Voltar ao Início</a></footer>
+  <div id="dados-usuario">Carregando...</div>
 </body>
 </html>
