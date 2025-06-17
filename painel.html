@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel do Usuário - Shopee Pro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Painel do Usuário</h1>
+  </header>
+  <main>
+    <section class="painel">
+      <div class="card">
+        <h2>🧑‍💼 Nome do Usuário</h2>
+        <p><strong>Plano:</strong> Gratuito</p>
+        <p><strong>Limite de análises hoje:</strong> 3</p>
+        <p><strong>Próxima renovação:</strong> -</p>
+        <a href="planos.html" class="botao">Fazer Upgrade</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p><a href="index.html">Voltar ao Início</a></p>
+  </footer>
+
+<script>
+  const botao = document.createElement("a");
+  botao.href = "https://wa.me/5599999999999?text=Olá! Preciso de ajuda com meu acesso ao Shopee Pro.";
+  botao.target = "_blank";
+  botao.style = `
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 999;
+  `;
+  botao.innerText = "💬 Suporte";
+  document.body.appendChild(botao);
+</script>
+
+</body>
+</html>

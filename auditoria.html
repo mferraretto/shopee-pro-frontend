@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Auditoria de Anúncio - Shopee Pro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🔍 Auditoria de Anúncio</h1>
+    <p>Cole abaixo o link do seu anúncio Shopee para receber uma avaliação completa.</p>
+  </header>
+  <main>
+    <section>
+      <form id="auditoria-form">
+        <input type="url" id="link-anuncio" placeholder="Cole o link do anúncio Shopee aqui..." required />
+        <button type="submit">Auditar Agora</button>
+      </form>
+      <div id="resultado-auditoria" style="margin-top: 2rem;"></div>
+    </section>
+  </main>
+  <footer>
+    <p><a href="index.html">Voltar ao Início</a></p>
+  </footer>
+
+  <script>
+    document.getElementById("auditoria-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const link = document.getElementById("link-anuncio").value.trim();
+      const resultado = document.getElementById("resultado-auditoria");
+
+      if (!link.includes("shopee.com.br/product")) {
+        resultado.innerHTML = "<p style='color:red;'>⚠️ Link inválido. Certifique-se de colar um link da Shopee.</p>";
+        return;
+      }
+
+      // Simulação da IA Local com nota aleatória e feedback básico
+      const nota = (Math.random() * 2 + 7).toFixed(1); // nota entre 7.0 e 9.0
+      resultado.innerHTML = `
+        <h2>📝 Resultado da Auditoria</h2>
+        <p><strong>Nota geral:</strong> <span style="font-size: 1.5rem;">${nota}/10</span></p>
+        <ul>
+          <li>✅ Título com palavras-chave detectadas</li>
+          <li>✅ Imagem clara e com fundo branco</li>
+          <li>⚠️ Descrição muito curta – inclua mais detalhes</li>
+          <li>⚠️ Sem selos visuais – adicione: "Mais Vendido", "Pronta Entrega"</li>
+        </ul>
+        <p><strong>Dica Final:</strong> Melhore a descrição com 3 tópicos: benefício, aplicação e diferenciais.</p>
+      `;
+    });
+  </script>
+</body>
+</html>
