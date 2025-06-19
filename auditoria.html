@@ -1,21 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Auditoria - Shopee Pro</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Auditoria</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="menu">
-    <a href="painel.html">Painel</a>
-    <a href="auditoria.html">Auditoria</a>
-    <a href="planos.html">Planos</a>
-    <a href="login.html" onclick="logout()">Logout</a>
-  </div>
-  <h1>Auditoria de Anúncios</h1>
+  <header>
+    <nav>
+      <ul class="menu">
+        <li><a href="painel.html">🏠 Início</a></li>
+        <li><a href="analise.html">📊 Análise</a></li>
+        <li><a href="auditoria.html">📁 Auditoria</a></li>
+        <li><a href="planos.html">💼 Planos</a></li>
+        <li><a href="#" onclick="logout()">🚪 Sair</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Auditoria de Anúncios</h1>
+
+    <section class="auditoria-form">
+      <input type="text" id="input-anuncio" placeholder="Cole aqui a URL do anúncio da Shopee">
+      <button onclick="enviarAuditoria()">Auditar Anúncio</button>
+      <div id="resposta" class="resultado"></div>
+    </section>
+  </main>
+
   <script>
+    async function enviarAuditoria() {
+      const input = document.getElementById("input-anuncio").value.trim();
+      const resposta = document.getElementById("resposta");
+
+      if (!input) {
+        resposta.innerText = "Por favor, cole a URL do anúncio.";
+        return;
+      }
+
+      resposta.innerText = "🔍 Analisando com IA, aguarde...";
+
+      try {
+        const res = await fetch("https://shopee-pro-backend.onrender.com/auditar", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ url: input })
+        });
+
+        const dados = await res.json();
+
+        if (res.ok) {
+          resposta.innerHTML = `
+            <strong>Nota:</strong> ${dados.nota}<br>
+            <strong>Feedback:</strong><br>${dados.feedback.replace(/\n/g, "<br>")}
+          `;
+        } else {
+          resposta.innerText = dados.erro || "Erro ao processar análise.";
+        }
+      } catch (e) {
+        console.error(e);
+        resposta.innerText = "Erro de conexão com o servidor.";
+      }
+    }
+
     function logout() {
-      localStorage.removeItem("userEmail");
+      localStorage.removeItem("uid");
+      window.location.href = "index.html";
     }
   </script>
 </body>
